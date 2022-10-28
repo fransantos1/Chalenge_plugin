@@ -63,14 +63,14 @@ public class events implements Listener {
 	
 	@EventHandler
 	public void TntGrass(PlayerMoveEvent u) { //TnT when on grass
-		int max = 500; 
+		int max = 100; 
         int min = 0; 
         int range = max - min + 1;
 		Player player = u.getPlayer();
 		
 		if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.GRASS_BLOCK) {
 			int rand = (int)(Math.random() * range) + min;
-			if (rand <= 0 ) {
+			if (rand <= 25 ) {
 				Bukkit.broadcastMessage(ChatColor.BOLD + "(!)" + ChatColor.DARK_RED + "A wild 5 TNTs appeared" );
 				for (int i = 1 ; i < 5; i++) {
 		    Location loc = player.getLocation();
